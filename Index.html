@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nessus Code - Hacker Profile</title>
+    <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            background: #0d0d0d;
+            color: #00ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        /* Page states */
+        .page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        /* Animated background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #002b36, #000);
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background .line {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: #00ff00;
+            animation: move 2s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes move {
+            from {transform: translateY(100%);}
+            to {transform: translateY(-100%);}
+        }
+
+        /* Text animations */
+        .container h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ff00;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px #00ff00, -2px -2px #00ff00;
+                transform: skew(0deg);
+            }
+            25% {
+                text-shadow: -2px 2px #00ff00, 2px -2px #00ff00;
+                transform: skew(5deg);
+            }
+            50% {
+                text-shadow: -2px -2px #00ff00, 2px 2px #00ff00;
+                transform: skew(0deg);
+            }
+            75% {
+                text-shadow: 2px -2px #00ff00, -2px 2px #00ff00;
+                transform: skew(-5deg);
+            }
+            100% {
+                text-shadow: 2px 2px #00ff00, -2px -2px #00ff00;
+                transform: skew(0deg);
+            }
+        }
+
+        .container p {
+            font-size: 1.2em;
+            animation: fadeIn 4s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #800080;
+        }
+
+        .red {
+            color: #ff0000;
+        }
+
+        /* Additional animated lines */
+        .line:nth-child(odd) {
+            left: 10%;
+            animation-duration: 4s;
+        }
+        .line:nth-child(even) {
+            left: 30%;
+            animation-duration: 3s;
+        }
+        .line:nth-child(3n) {
+            left: 50%;
+            animation-duration: 3.5s;
+        }
+        .line:nth-child(3n+1) {
+            left: 70%;
+            animation-duration: 4.5s;
+        }
+        .line:nth-child(3n+2) {
+            left: 90%;
+            animation-duration: 2.5s;
+        }
+
+        /* Final page styling */
+        .final-page h2 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #800080;
+            animation: pulse 3s infinite;
+            color: #800080;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div class="background">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Initial Animated Display -->
+    <div class="page active" id="page1">
+        <div class="container">
+            <h1>Nessus Code</h1>
+            <p>"Breaking code, one line at a time"</p>
+        </div>
+    </div>
+
+    <!-- Description Page -->
+    <div class="page" id="page2">
+        <div class="container">
+            <div class="description">
+                <span class="red">Welcome to Nessus Code,</span> a cutting-edge cybersecurity industry leader dedicated to safeguarding individuals and organizations worldwide from ever-evolving threats. Our mission is to provide unparalleled security and safety solutions, making us a trusted pillar for high-stakes organizations.
+                <br><br>
+                In collaboration with elite partners like Cybersixgill, we pioneer dark web takedowns and fortify bank protection, ensuring the integrity of digital landscapes. Our expertise:
+                <br><br>
+                <span class="red">- Penetration testing<br>
+                - Vulnerability assessment<br>
+                - Security research<br>
+                - Data recovery<br>
+                - Cybersecurity consulting</span>
+                <br><br>
+                Join forces with us to combat cyber threats and secure a safer digital future.
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Page -->
+    <div class="page" id="page3">
+        <div class="container">
+            <div class="description">
+                <span class="red">𝐌𝐄𝐒𝐒𝐀𝐆𝐄 US 𝐅𝐎𝐑 𝐀𝐍𝐘 𝐊𝐈𝐍𝐃 𝐎𝐅 𝐒𝐄𝐑𝐕𝐈𝐂𝐄 𝐑𝐄𝐂𝐎𝐕𝐄𝐑 𝐘𝐎𝐔𝐑 𝐀𝐂𝐂𝐎𝐔𝐍𝐓<br>
+                🧑🏻‍💻Professional🧑🏻‍💻<br></span>
+                📲𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗿𝗲𝗰𝗼𝘃𝗲𝗿𝘆 ✅<br>
+                📲𝗪𝗵𝗮𝘁𝘀𝗮𝗽𝗽 𝗛𝗮𝗰𝗸𝗶𝗻𝗴 ✅<br>
+                📲𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺 𝗛𝗮𝗰𝗸𝗶𝗻𝗴 ✅<br>
+                📲𝗚𝗺𝗮𝗶𝗹 𝗛𝗮𝗰𝗸𝗶𝗻𝗴 ✅<br>
+                📲𝗬𝗮𝗵𝗼𝗼 𝗛𝗮𝗰𝗸𝗶𝗻𝗴✅<br>
+                📲𝗪𝗶𝗻𝗱𝗼𝘄𝘀 𝗛𝗮𝗰𝗸𝗶𝗻𝗴 ✅<br>
+                📲𝗧𝗼𝘄𝗲𝗿 𝗹𝗼𝗰𝗮𝘁𝗶𝗼𝗻 𝗙𝗶𝗻𝗱𝗲𝗿✅ 𝗧𝗼𝗼𝗹𝘀<br>
+                📲𝗕𝗶𝘁𝗰𝗼𝗶𝗻 𝗿𝗲𝗰𝗼𝘃𝗲𝗿𝘆 ✅<br>
+                📲𝗘𝘁𝗵𝗲𝗿𝗲𝘂𝗺 𝗿𝗲𝗰𝗼𝘃𝗲𝗿𝘆 ✅<br>
+                📲𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗡𝘂𝗺𝗯𝗲𝗿✅ 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲<br>
+                📲𝗔𝗻𝗱𝗿𝗼𝗶𝗱 𝗛𝗮𝗰𝗸𝗶𝗻𝗴 ✅<br>
+                📲𝗩𝗶𝗿𝘂𝘀 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 ✅<
+                
