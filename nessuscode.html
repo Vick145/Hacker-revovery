@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nessascode - Hacker Profile</title>
+    <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            background: #0d0d0d;
+            color: #00ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        /* Page states */
+        .page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        /* Animated background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #002b36, #000);
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background .line {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: #00ff00;
+            animation: move 2s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes move {
+            from {transform: translateY(100%);}
+            to {transform: translateY(-100%);}
+        }
+
+        /* Text animations */
+        .container h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ff00;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px #00ff00, -2px -2px #00ff00;
+                transform: skew(0deg);
+            }
+            25% {
+                text-shadow: -2px 2px #00ff00, 2px -2px #00ff00;
+                transform: skew(5deg);
+            }
+            50% {
+                text-shadow: -2px -2px #00ff00, 2px 2px #00ff00;
+                transform: skew(0deg);
+            }
+            75% {
+                text-shadow: 2px -2px #00ff00, -2px 2px #00ff00;
+                transform: skew(-5deg);
+            }
+            100% {
+                text-shadow: 2px 2px #00ff00, -2px -2px #00ff00;
+                transform: skew(0deg);
+            }
+        }
+
+        .container p {
+            font-size: 1.2em;
+            animation: fadeIn 2s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .description {
+            font-size: 1em;
+            line-height: 1.6em;
+            color: #00ff00;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Additional animated lines */
+        .line:nth-child(odd) {
+            left: 10%;
+            animation-duration: 3s;
+        }
+        .line:nth-child(even) {
+            left: 30%;
+            animation-duration: 1.5s;
+        }
+        .line:nth-child(3n) {
+            left: 50%;
+            animation-duration: 2.5s;
+        }
+        .line:nth-child(3n+1) {
+            left: 70%;
+            animation-duration: 3.5s;
+        }
+        .line:nth-child(3n+2) {
+            left: 90%;
+            animation-duration: 1s;
+        }
+
+        /* Final page styling */
+        .final-page h2 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00ff00;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div class="background">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Initial Animated Display -->
+    <div class="page active" id="page1">
+        <div class="container">
+            <h1>nessascode</h1>
+            <p>"Breaking code, one line at a time"</p>
+        </div>
+    </div>
+
+    <!-- Description Page -->
+    <div class="page" id="page2">
+        <div class="container">
+            <div class="description">
+                Nessascode is a master of the digital realm, known for their unparalleled skills in code manipulation, cybersecurity, and ethical hacking. With a deep understanding of how systems tick and how to dismantle them, nessascode pushes the boundaries of what's possible in the world of technology. 
+                They thrive on challenges, diving into the depths of complex codebases and emerging with innovative solutions. Their work is not just about finding vulnerabilities, but about understanding the intricacies of software and networks, making them a formidable force in the cybersecurity community.
+                When nessascode isn’t unraveling the mysteries of code, they’re sharing their knowledge with the world, helping to cultivate a new generation of ethical hackers. Their mission is clear: to secure the digital landscape and inspire others to do the same.
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Page with Call to Action -->
+    <div class="page" id="page3">
+        <div class="final-page">
+            <h2>Click anywhere to contact nessascode</h2>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle page transitions
+        document.addEventListener('DOMContentLoaded', function () {
+            let currentPage = 1;
+            const totalPages = 3;
+
+            function showNextPage() {
+                document.getElementById(`page${currentPage}`).classList.remove('active');
+                currentPage++;
+                if (currentPage > totalPages) {
+                    currentPage = totalPages;
+                }
+                document.getElementById(`page${currentPage}`).classList.add('active');
+            }
+
+            // Automatically transition from page 1 to page 2 after 5 seconds
+            setTimeout(showNextPage, 5000);
+
+            // Transition to page 3 after 10 seconds
+            setTimeout(showNextPage, 10000);
+
+            // Redirect to Telegram when the final page is clicked
+            document.getElementById('page3').addEventListener('click', function () {
+                window.location.href = 'https://t.me/Nessuscode';
+            });
+        });
+    </script>
+
+</body>
+</html>
